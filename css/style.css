@@ -54,6 +54,41 @@ body {
   height: 200vh;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+  background-color: #0D0D0D;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.logo {
+  flex-basis: 70%;
+  color: whitesmoke;
+  padding: 20px;
+  font-size: 2rem;
+}
+
+.menu {
+  flex-basis: 30%;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.material-icons {
+  color: whitesmoke;
+  font-size: 3rem;
+}
+
+@keyframes show-header-box {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 header {
   height: 100vh;
   background: url("../assets/bg-header.webp") center/cover fixed;
@@ -67,6 +102,7 @@ header .header-box {
   padding: 30px;
   display: flex;
   flex-direction: column;
+  animation: show-header-box 5s cubic-bezier(0.12, 1.09, 0.93, 0.85);
 }
 header h1 {
   font-size: 2rem;
