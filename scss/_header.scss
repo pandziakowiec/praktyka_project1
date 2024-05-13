@@ -63,7 +63,7 @@ header {
         font-size: 110%;
         line-height: 60px;
         
-        background-color: $color4;
+        background-color: $color4-transparent;
         width: 200px;
         height: 60px;
         border-radius: 6px;
@@ -71,7 +71,7 @@ header {
         transition: .5s;
         
         &:hover{
-            background-color:$color4-transparent;
+            background-color:$color4;
             transform: translateX(10px);
             
         }

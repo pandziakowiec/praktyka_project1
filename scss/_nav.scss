@@ -1,5 +1,24 @@
 @use'variables' as *;
+@use'mixins' as *;
 
+@keyframes show-menu-action{ 
+    from{ 
+        scale: 0; 
+    } 
+    to{ 
+        scale: 1; 
+    } 
+} 
+@keyframes hide-menu-action{ 
+    from{
+        // scale: 1;
+        display: block;
+    }
+    to{
+        scale: 0;
+        display: none;
+    }
+}
 nav{
     display: flex;
     align-items: center;
@@ -13,7 +32,8 @@ nav{
     flex-basis: 70%;
     color: $color6;
     padding: 20px;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    
 }
 
 .menu{
@@ -26,5 +46,76 @@ nav{
 .material-icons{
     color: $color6;
     font-size: 3rem;
-    
+    cursor: pointer;    
 } 
+
+.navigation{
+
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    @include md-screen{
+        width: 50%;
+    }
+    @include lg-screen{
+        width: 25%;
+    }
+    z-index: 2;
+    background-color: $color5;  
+    animation: hide-menu-action .5s linear; 
+    color: $color6;
+
+
+.material-icons{
+    color: $color6;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+ul{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+li{
+    flex-basis: 10%;
+    width: 100%;
+
+}
+
+a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    &:hover{
+        background-color: $color4-transparent;
+        transition: .5s;
+    }
+    
+}
+
+} 
+ 
+
+.showMenu{
+    display: block;
+    animation: show-menu-action .5s linear;
+}
+
+
+
+// .hidemenu{
+//     display: none;
+//     animation: hidemenuAction .5s linear;
+// }
+
+
